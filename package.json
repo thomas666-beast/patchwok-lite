@@ -1,0 +1,12 @@
+{
+  "name": "patchwork-lite",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "node": "node scripts/run-node.mjs",
+    "server": "node scripts/run-server.mjs",
+    "nodes": "for f in instances/nodes/*.env; do node scripts/run-node.mjs \"$(basename \"$f\" .env)\" & done; wait",
+    "servers": "for f in instances/servers/*.env; do node scripts/run-server.mjs \"$(basename \"$f\" .env)\" & done; wait"
+  }
+}
